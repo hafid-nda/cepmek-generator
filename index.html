@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamu Nanya Generator</title>
+</head>
+
+<body style="text-align: center">
+    <h1>KAMU NANYAAE?</h1>
+    <img src="img/3.jpeg" height="250px" width="250px" id="img-nanya">
+    <p>Skor kamu</p>
+    <p id="clicks">Kamu nanya : 0 Kali</p>
+    <button onclick="tambah()">Rambutnya model apa bang?</button>
+    <button onclick="reset()">Reset bang capek</button><br>
+    <h2>Skor Tertinggi : 987819 kali kamu nanya</h2>
+</body>
+<script>
+    let clicks = 0;
+    function tambah() {
+        const audio = new Audio("sound/kamunanya.mp3")
+        audio.play()
+        clicks++
+        document.getElementById("clicks").innerHTML = "Kamu nanya : " + clicks + " kali"
+        document.getElementById("img-nanya").src = "img/1.jpeg"
+        audio.addEventListener("ended", function () {
+            document.getElementById("img-nanya").src = "img/3.jpeg"
+        })
+    }
+    function reset() {
+        const audio = new Audio("sound/nanya.mp3")
+        audio.play()
+        clicks = 0;
+        document.getElementById("clicks").innerHTML = "Kamu nanya : " + clicks + " kali"
+        document.getElementById("img-nanya").src = "img/1.jpeg"
+    }
+</script>
+
+</html>
